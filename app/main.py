@@ -6,6 +6,7 @@ def main():
     sys.stdout.write("$ ")
     command = input()
     sys.stdout.write(command + ": command not found")
+    # testing the code 
     pass
 
 
