@@ -10,6 +10,9 @@ def main():
         command = input()
         print(command + ": command not found")
 
+        if command == "exit" :
+            break
+
     pass
 
 
