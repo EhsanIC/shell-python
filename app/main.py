@@ -31,12 +31,6 @@ def main():
             print(command + ": command not found")
 
 
-
-
-
-
-    pass
-
 def runType(command):
 
     if command in commnads :
