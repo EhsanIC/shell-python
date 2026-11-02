@@ -1,3 +1,4 @@
+import shutil
 import sys
 
 
@@ -8,7 +9,6 @@ commnads = [
 ]
 
 def main():
-    # TODO: Uncomment the code below to pass the first stage
 
     while True:
 
@@ -35,9 +35,16 @@ def runType(command):
 
     if command in commnads :
         print(command + " is a shell builtin")
-    else :
-        print(command + ": not found")
 
+    else :
+
+        loc = shutil.which(command)
+
+        if loc != None:
+            print(command + " is " + loc)
+
+        else:
+            print(command + ": not found")
 
 
 if __name__ == "__main__":
