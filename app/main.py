@@ -36,7 +36,6 @@ def main():
         elif command == "pwd":
             print(os.getcwd())
         elif  command == "cd":
-            print(args[0])
             try:
                 os.chdir(args[0])
             except Exception as err:
