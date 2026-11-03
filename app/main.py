@@ -1,8 +1,9 @@
-from ast import arg
+
 import os
 import shutil
 import subprocess
 import sys
+from pathlib import Path
 
 
 
@@ -36,11 +37,15 @@ def main():
         elif command == "pwd":
             print(os.getcwd())
         elif  command == "cd":
-            try:
-                os.chdir(args[0])
-            except Exception as err:
-                print("cd: " + args[0] + ": No such file or directory")
-                #cd: <directory>: No such file or directory
+
+            if args[0] == "~":
+                os.chdir(Path.home())
+
+            else:
+                try:
+                    os.chdir(args[0])
+                except Exception:
+                    print("cd: " + args[0] + ": No such file or directory")
 
         else :
             if isCommandExe(command):
