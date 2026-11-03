@@ -1,3 +1,4 @@
+from ast import arg
 import os
 import shutil
 import subprocess
@@ -34,6 +35,13 @@ def main():
             runType(args[0])
         elif command == "pwd":
             print(os.getcwd())
+        elif  command == "cd":
+            print(args[0])
+            try:
+                os.chdir(args[0])
+            except Exception as err:
+                print("cd: " + args[0] + ": No such file or directory")
+                #cd: <directory>: No such file or directory
 
         else :
             if isCommandExe(command):
