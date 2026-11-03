@@ -1,8 +1,9 @@
-from logging import fatal
+import os
 import shutil
 import subprocess
 import sys
-from tabnanny import check
+
+
 
 commnads = [
     "exit",
@@ -24,11 +25,16 @@ def main():
 
 
         if command == "exit" :
+
+#test this shit is gay is as fuck nigga
             break
         elif command == "echo" :
             print(" ".join(args))
         elif command == "type":
             runType(args[0])
+        elif command == "pwd":
+            print(os.getcwd())
+
         else :
             if isCommandExe(command):
                 runCommandExe(rawInput)
